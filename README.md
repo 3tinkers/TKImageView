@@ -1,5 +1,15 @@
 # TKImageView
 An easy way to crop an image.  
+##Features
+* Both iPhone/iPad available
+* Support pinch gesture to zoom
+* Support pan gesture to move&resize
+* Support cutomize line width and color 
+* Support cross line and middle line
+
+##System requirements
+* iOS 7.0 or higher
+
 ##Samples
 ![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/sample0.gif)
 ![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/sample1.gif)
