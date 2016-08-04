@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CropImageViewController">
+            <connections>
+                <outlet property="cropProportionScrollView" destination="Onc-ma-IX4" id="fQa-MD-7Bg"/>
+                <outlet property="tkImageView" destination="Xxl-IJ-F1K" id="iOh-Ke-5NV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="Onc-ma-IX4">
+                    <rect key="frame" x="0.0" y="554" width="375" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KeE-dC-bp7">
+                    <rect key="frame" x="8" y="615" width="44" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                    <state key="normal" image="crop_cancel.png"/>
+                    <connections>
+                        <action selector="clickCancelBtn:" destination="-1" eventType="touchUpInside" id="1zo-du-3pg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Byn-2A-io7">
+                    <rect key="frame" x="323" y="615" width="44" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                    <state key="normal" image="crop_ok.png"/>
+                    <connections>
+                        <action selector="clickOkBtn:" destination="-1" eventType="touchUpInside" id="Ze3-qs-NzA"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" id="Xxl-IJ-F1K" customClass="TKImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="304.5" y="374.5"/>
+        </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="4Sd-xr-rt8">
+            <connections>
+                <action selector="moveCorner:" destination="-1" id="lL5-Mn-yf2"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="nMX-U1-AWL">
+            <connections>
+                <action selector="moveCorner:" destination="-1" id="1vr-F5-cE7"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="qfZ-oR-JoZ">
+            <connections>
+                <action selector="moveCorner:" destination="-1" id="AsB-AS-hKE"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="PGb-Ta-SbO">
+            <connections>
+                <action selector="moveCorner:" destination="-1" id="W5H-Pm-rqg"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="Pws-Sv-aB3">
+            <connections>
+                <action selector="moveCropView:" destination="-1" id="oni-RJ-VXv"/>
+            </connections>
+        </panGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="crop_cancel.png" width="38" height="39"/>
+        <image name="crop_ok.png" width="72" height="72"/>
+    </resources>
+</document>

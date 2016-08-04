@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="g5L-0M-XAG">
+                                <rect key="frame" x="200" y="64" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ikF-e1-1od"/>
+                                    <constraint firstAttribute="height" constant="200" id="xca-m6-vc9"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI2-Ex-MaS">
+                                <rect key="frame" x="200" y="314" width="200" height="44"/>
+                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2vk-a2-rsr"/>
+                                    <constraint firstAttribute="height" constant="44" id="zBX-5t-Rep"/>
+                                </constraints>
+                                <state key="normal" title="开始裁剪">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickStartBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3jC-mQ-8FC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eI2-Ex-MaS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5jD-WK-neI"/>
+                            <constraint firstItem="eI2-Ex-MaS" firstAttribute="top" secondItem="g5L-0M-XAG" secondAttribute="bottom" constant="50" id="B7y-gE-d6b"/>
+                            <constraint firstItem="g5L-0M-XAG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="Roy-VP-Y0E"/>
+                            <constraint firstItem="g5L-0M-XAG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cb4-3a-Sic"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="toCropImageView" destination="g5L-0M-XAG" id="NI0-xa-wEP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285" y="429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="test.jpg" width="504" height="429"/>
+    </resources>
+</document>
