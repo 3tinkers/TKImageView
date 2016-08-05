@@ -42,4 +42,4 @@ You can get the cropped image by this function.
 	- (UIImage *)currentCroppedImage;
 ## Bug&Feature Report
 
-If you find any bugs in my code or you think it is useful to add some features in this tool, you can write a issue or mail to me <yinyu@tinkers.com.cn>, thanks a lot!
+If you find any bugs in my code or you think it is useful to add some features in this tool, please write a issue or mail to me <yinyu@tinkers.com.cn>, thanks a lot!
