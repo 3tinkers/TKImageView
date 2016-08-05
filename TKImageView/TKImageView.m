@@ -506,7 +506,6 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
                 }
             }
             if(!isMinimum) {
-                CGFloat selfAspectRatio = WIDTH(_imageView) / HEIGHT(_imageView);
                 if(_cropAspectRatio == 0) {
                     if(width >= widthMax) {
                         width = MIN(width, WIDTH(_imageView) - 2 * cornerMargin);
@@ -518,7 +517,7 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
                     }
 
                 }
-                else if(selfAspectRatio > _cropAspectRatio) {
+                else if(_imageAspectRatio > _cropAspectRatio) {
                     if(height >= heightMax) {
                         height = MIN(height, HEIGHT(_imageView) - 2 * cornerMargin);
                         center.y = center.y > HEIGHT(_imageView) / 2.0 ? HEIGHT(_imageView) - height / 2.0 - cornerMargin : height / 2.0 + cornerMargin;
@@ -788,7 +787,8 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
 }
 - (void)resetImageView {
     
-    if(_imageAspectRatio > 1) {
+    CGFloat selfAspectRatio = WIDTH(self) / HEIGHT(self);
+    if(_imageAspectRatio > selfAspectRatio) {
         _paddingLeftRight = 0;
         _paddingTopBottom = floor((HEIGHT(self) - WIDTH(self) / _imageAspectRatio) / 2.0);
         _imageView.frame = CGRectMake(0, _paddingTopBottom, WIDTH(self), floor(WIDTH(self) / _imageAspectRatio));
@@ -923,7 +923,6 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
     if(_cropAspectRatio == cropAspectRatio) return;
     _cropAspectRatio = MAX(cropAspectRatio, 0);
     CGFloat cornerMargin = _cropAreaCornerLineWidth - _cropAreaBorderLineWidth;
-    CGFloat selfAspectRatio = WIDTH(_imageView) / HEIGHT(_imageView);
     CGFloat width, height;
     if(_cropAspectRatio == 0) {
         width = WIDTH(_imageView) - 2 * cornerMargin;
@@ -935,7 +934,7 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
     }
     else {
         [self removeMidLines];
-        if(selfAspectRatio > _cropAspectRatio) {
+        if(_imageAspectRatio > _cropAspectRatio) {
             height = HEIGHT(_imageView) - 2 * cornerMargin;
             width = height * _cropAspectRatio;
         }
