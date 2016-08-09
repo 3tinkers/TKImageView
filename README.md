@@ -24,9 +24,8 @@ cropAspectRatio  | CGFloat  | The aspect retio you want to crop the image, equal
 cropAreaBorderLineColor  | UIColor  | the color of border lines.  
 cropAreaBorderLineWidth  | CGFloat  | the width of border lines.  
 cropAreaCornerLineColor  | UIColor  | the line color of the corner.
-cropAreaCornerLineWidth  | CGFloat  | the line width of the corner. 
-cropAreaCornerWidth  | CGFloat  | the line width of the corner. 
 cropAreaCornerLineWidth  | CGFloat  | the width of the corner area, not the line width in corner.  
+cropAreaCornerWidth  | CGFloat  | the line width of the corner. 
 cropAreaCornerHeight  | CGFloat  | the height of the corner area.  
 minspace  | CGFloat  | the minimum distance between the corners of one border.  
 cropAreaCrossLineWidth  | CGFloat  | the width of cross lines.
