@@ -35,10 +35,14 @@ cropAreaMidLineHeight  | CGFloat  | the height of middle lines.
 cropAreaMidLineColor  | UIColor  | the color of middle lines.
 maskColor  | UIColor  | the color of the mask view which is always transparent black.
 cornerBorderInImage  | BOOL  | whether the corner border inside the image or not.
-![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/property.png) 
-cornerBorderInImage = YES
-![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/cornerBorderInImage.png)
-cornerBorderInImage = NO
+![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/property.png)  
+
+cornerBorderInImage = YES  
+
+![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/cornerBorderInImage.png)  
+
+cornerBorderInImage = NO  
+
 ![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/cornerBorderOutOfImage.png)
 ## Usage
 TKImageView support both **initWithFrame** and **initWithCoder** to initialize.
