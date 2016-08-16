@@ -55,14 +55,14 @@
     _tkImageView.cropAreaCornerWidth = 44;
     _tkImageView.cropAreaCornerHeight = 44;
     _tkImageView.minSpace = 30;
-    _tkImageView.cropAreaCornerLineColor = [UIColor whiteColor];
-    _tkImageView.cropAreaBorderLineColor = [UIColor whiteColor];
+    _tkImageView.cropAreaCornerLineColor = [UIColor lightGrayColor];
+    _tkImageView.cropAreaBorderLineColor = [UIColor grayColor];
     _tkImageView.cropAreaCornerLineWidth = 8;
     _tkImageView.cropAreaBorderLineWidth = 6;
     _tkImageView.cropAreaMidLineWidth = 30;
     _tkImageView.cropAreaMidLineHeight = 8;
-    _tkImageView.cropAreaMidLineColor = [UIColor whiteColor];
-    _tkImageView.cropAreaCrossLineColor = [UIColor whiteColor];
+    _tkImageView.cropAreaMidLineColor = [UIColor grayColor];
+    _tkImageView.cropAreaCrossLineColor = [UIColor lightGrayColor];
     _tkImageView.cropAreaCrossLineWidth = 6;
     
 }
