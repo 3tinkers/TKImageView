@@ -30,5 +30,6 @@ typedef NS_ENUM(NSInteger, TKCropAreaCornerStyle) {
 @property (assign, nonatomic) CGFloat cropAreaMidLineHeight;
 @property (strong, nonatomic) UIColor *cropAreaMidLineColor;
 @property (strong, nonatomic) UIColor *maskColor;
+@property (assign, nonatomic) BOOL cornerBorderInImage;
 - (UIImage *)currentCroppedImage;
 @end

@@ -34,7 +34,36 @@ cropAreaMidLineWidth  | CGFloat  | the width of middle lines.
 cropAreaMidLineHeight  | CGFloat  | the height of middle lines.
 cropAreaMidLineColor  | UIColor  | the color of middle lines.
 maskColor  | UIColor  | the color of the mask view which is always transparent black.
+cornerBorderInImage  | BOOL  | whether the corner border inside the image or not.
+![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/property.png) 
+cornerBorderInImage = YES
+![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/cornerBorderInImage.png)
+cornerBorderInImage = NO
+![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/cornerBorderOutOfImage.png)
+## Usage
+TKImageView support both **initWithFrame** and **initWithCoder** to initialize.
+The properties should be set or keep default after the initialize.Once one property has been set, you should not change it any more. 
 
+	@property (weak, nonatomic) IBOutlet TKImageView *tkImageView;
+	- (void)viewDidLoad {   
+    	_tkImageView.toCropImage = [UIImage imageNamed: @"test.jpg"];
+    	_tkImageView.showMidLines = YES;
+    	_tkImageView.needScaleCrop = YES;
+    	_tkImageView.showCrossLines = YES;
+    	_tkImageView.cornerBorderInImage = NO;
+    	_tkImageView.cropAreaCornerWidth = 44;
+    	_tkImageView.cropAreaCornerHeight = 44;
+    	_tkImageView.minSpace = 30;
+    	_tkImageView.cropAreaCornerLineColor = [UIColor whiteColor];
+    	_tkImageView.cropAreaBorderLineColor = [UIColor whiteColor];
+    	_tkImageView.cropAreaCornerLineWidth = 8;
+    	_tkImageView.cropAreaBorderLineWidth = 6;
+    	_tkImageView.cropAreaMidLineWidth = 30;
+    	_tkImageView.cropAreaMidLineHeight = 8;
+    	_tkImageView.cropAreaMidLineColor = [UIColor whiteColor];
+    	_tkImageView.cropAreaCrossLineColor = [UIColor whiteColor];
+    	_tkImageView.cropAreaCrossLineWidth = 6;    
+	}
 ## Function
 You can get the cropped image by this function.
 

@@ -37,7 +37,7 @@
     [self setUpTKImageView];
     currentProportion = 0;
     [self setUpCropProportionView];
-    [self clickProportionBtn: proportionBtnArr[0]];
+    [self clickProportionBtn: proportionBtnArr[1]];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -47,22 +47,23 @@
 }
 - (void)setUpTKImageView {
     
+    _tkImageView.toCropImage = [UIImage imageNamed: @"test.jpg"];
     _tkImageView.showMidLines = YES;
     _tkImageView.needScaleCrop = YES;
     _tkImageView.showCrossLines = YES;
+    _tkImageView.cornerBorderInImage = NO;
     _tkImageView.cropAreaCornerWidth = 44;
     _tkImageView.cropAreaCornerHeight = 44;
     _tkImageView.minSpace = 30;
-    _tkImageView.cropAreaCornerLineColor = [UIColor colorWithRed:204.0/255.0 green:51.0/255.0 blue:153.0/255.0 alpha:1.0];
-    _tkImageView.cropAreaBorderLineColor = [UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:153.0/255.0 alpha:1.0];
+    _tkImageView.cropAreaCornerLineColor = [UIColor whiteColor];
+    _tkImageView.cropAreaBorderLineColor = [UIColor whiteColor];
     _tkImageView.cropAreaCornerLineWidth = 8;
     _tkImageView.cropAreaBorderLineWidth = 6;
     _tkImageView.cropAreaMidLineWidth = 30;
     _tkImageView.cropAreaMidLineHeight = 8;
-    _tkImageView.cropAreaMidLineColor = [UIColor colorWithRed:153.0/255.0 green:204.0/255.0 blue:0/255.0 alpha:1.0];
-    _tkImageView.cropAreaCrossLineColor = [UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:153.0/255.0 alpha:1.0];
+    _tkImageView.cropAreaMidLineColor = [UIColor whiteColor];
+    _tkImageView.cropAreaCrossLineColor = [UIColor whiteColor];
     _tkImageView.cropAreaCrossLineWidth = 6;
-    _tkImageView.toCropImage = [UIImage imageNamed: @"test.jpg"];
     
 }
 - (void)setUpCropProportionView {
