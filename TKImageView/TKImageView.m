@@ -490,67 +490,7 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
             break;
         }
         case UIGestureRecognizerStateChanged: {
-            
-            CGPoint center = _cropAreaView.center;
-            CGFloat tmpCornerMargin = self.cornerMargin * _cornerBorderInImage;
-            CGFloat width = _pinchOriSize.width * pinchGesture.scale;
-            CGFloat height = _pinchOriSize.height * pinchGesture.scale;
-            CGFloat widthMax = MIN(WIDTH(_imageView) - center.x - tmpCornerMargin, center.x - tmpCornerMargin) * 2;
-            CGFloat widthMin = _minSpace + _cropAreaCornerWidth * 2.0 - tmpCornerMargin * 2.0;
-            CGFloat heightMax = MIN(HEIGHT(_imageView) - center.y - tmpCornerMargin, center.y - tmpCornerMargin) * 2;
-            CGFloat heightMin = _minSpace + _cropAreaCornerWidth * 2.0 - tmpCornerMargin * 2;
-
-            BOOL isMinimum = NO;
-            if(_cropAspectRatio > 1) {
-                if(height <= heightMin) {
-                    height = heightMin;
-                    width = height * _cropAspectRatio;
-                    isMinimum = YES;
-                }
-            }
-            else {
-                if(width <= widthMin) {
-                    width = widthMin;
-                    height = width / (_cropAspectRatio == 0 ? 1 : _cropAspectRatio);
-                    isMinimum = YES;
-                }
-            }
-            if(!isMinimum) {
-                if(_cropAspectRatio == 0) {
-                    if(width >= widthMax) {
-                        width = MIN(width, WIDTH(_imageView) - 2 * tmpCornerMargin);
-                        center.x = center.x > WIDTH(_imageView) / 2.0 ? WIDTH(_imageView) - width / 2.0 - tmpCornerMargin : width / 2.0 + tmpCornerMargin;
-                    }
-                    if(height > heightMax) {
-                        height = MIN(height, HEIGHT(_imageView) - 2 * tmpCornerMargin);
-                        center.y = center.y > HEIGHT(_imageView) / 2.0 ? HEIGHT(_imageView) - height / 2.0 - tmpCornerMargin : height / 2.0 + tmpCornerMargin;
-                    }
-
-                }
-                else if(_imageAspectRatio > _cropAspectRatio) {
-                    if(height >= heightMax) {
-                        height = MIN(height, HEIGHT(_imageView) - 2 * tmpCornerMargin);
-                        center.y = center.y > HEIGHT(_imageView) / 2.0 ? HEIGHT(_imageView) - height / 2.0 - tmpCornerMargin : height / 2.0 + tmpCornerMargin;
-                    }
-                    width = height * _cropAspectRatio;
-                    if(width > widthMax) {
-                        center.x = center.x > WIDTH(_imageView) / 2.0 ? WIDTH(_imageView) - width / 2.0 - tmpCornerMargin : width / 2.0 + tmpCornerMargin;
-                    }
-                }
-                else {
-                    if(width >= widthMax) {
-                        width = MIN(width, WIDTH(_imageView) - 2 * tmpCornerMargin);
-                        center.x = center.x > WIDTH(_imageView) / 2.0 ? WIDTH(_imageView) - width / 2.0 - tmpCornerMargin : width / 2.0 + tmpCornerMargin;
-                    }
-                    height = width / _cropAspectRatio;
-                    if(height > heightMax) {
-                        center.y = center.y > HEIGHT(_imageView) / 2.0 ? HEIGHT(_imageView) - height / 2.0 - tmpCornerMargin : height / 2.0 + tmpCornerMargin;
-                    }
-                }
-            }
-            _cropAreaView.bounds = CGRectMake(0, 0, width, height);
-            _cropAreaView.center = center;
-            [self resetCornersOnCropAreaFrameChanged];
+            [self resetCropAreaByScaleFactor: pinchGesture.scale];
             break;
         }
         default:
@@ -850,7 +790,77 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
     [self resetCropTransparentArea];
     
 }
+- (void)resetCropAreaByScaleFactor: (CGFloat)scaleFactor {
+    
+    CGPoint center = _cropAreaView.center;
+    CGFloat tmpCornerMargin = self.cornerMargin * _cornerBorderInImage;
+    CGFloat width = _pinchOriSize.width * scaleFactor;
+    CGFloat height = _pinchOriSize.height * scaleFactor;
+    CGFloat widthMax = MIN(WIDTH(_imageView) - center.x - tmpCornerMargin, center.x - tmpCornerMargin) * 2;
+    CGFloat widthMin = _minSpace + _cropAreaCornerWidth * 2.0 - tmpCornerMargin * 2.0;
+    CGFloat heightMax = MIN(HEIGHT(_imageView) - center.y - tmpCornerMargin, center.y - tmpCornerMargin) * 2;
+    CGFloat heightMin = _minSpace + _cropAreaCornerWidth * 2.0 - tmpCornerMargin * 2;
+    
+    BOOL isMinimum = NO;
+    if(_cropAspectRatio > 1) {
+        if(height <= heightMin) {
+            height = heightMin;
+            width = height * _cropAspectRatio;
+            isMinimum = YES;
+        }
+    }
+    else {
+        if(width <= widthMin) {
+            width = widthMin;
+            height = width / (_cropAspectRatio == 0 ? 1 : _cropAspectRatio);
+            isMinimum = YES;
+        }
+    }
+    if(!isMinimum) {
+        if(_cropAspectRatio == 0) {
+            if(width >= widthMax) {
+                width = MIN(width, WIDTH(_imageView) - 2 * tmpCornerMargin);
+                center.x = center.x > WIDTH(_imageView) / 2.0 ? WIDTH(_imageView) - width / 2.0 - tmpCornerMargin : width / 2.0 + tmpCornerMargin;
+            }
+            if(height > heightMax) {
+                height = MIN(height, HEIGHT(_imageView) - 2 * tmpCornerMargin);
+                center.y = center.y > HEIGHT(_imageView) / 2.0 ? HEIGHT(_imageView) - height / 2.0 - tmpCornerMargin : height / 2.0 + tmpCornerMargin;
+            }
+            
+        }
+        else if(_imageAspectRatio > _cropAspectRatio) {
+            if(height >= heightMax) {
+                height = MIN(height, HEIGHT(_imageView) - 2 * tmpCornerMargin);
+                center.y = center.y > HEIGHT(_imageView) / 2.0 ? HEIGHT(_imageView) - height / 2.0 - tmpCornerMargin : height / 2.0 + tmpCornerMargin;
+            }
+            width = height * _cropAspectRatio;
+            if(width > widthMax) {
+                center.x = center.x > WIDTH(_imageView) / 2.0 ? WIDTH(_imageView) - width / 2.0 - tmpCornerMargin : width / 2.0 + tmpCornerMargin;
+            }
+        }
+        else {
+            if(width >= widthMax) {
+                width = MIN(width, WIDTH(_imageView) - 2 * tmpCornerMargin);
+                center.x = center.x > WIDTH(_imageView) / 2.0 ? WIDTH(_imageView) - width / 2.0 - tmpCornerMargin : width / 2.0 + tmpCornerMargin;
+            }
+            height = width / _cropAspectRatio;
+            if(height > heightMax) {
+                center.y = center.y > HEIGHT(_imageView) / 2.0 ? HEIGHT(_imageView) - height / 2.0 - tmpCornerMargin : height / 2.0 + tmpCornerMargin;
+            }
+        }
+    }
+    _cropAreaView.bounds = CGRectMake(0, 0, width, height);
+    _cropAreaView.center = center;
+    [self resetCornersOnCropAreaFrameChanged];
+    
+}
 #pragma mark - Setter & Getters
+- (void)setScaleFactor:(CGFloat)scaleFactor {
+    
+    _pinchOriSize = _cropAreaView.frame.size;
+    [self resetCropAreaByScaleFactor: scaleFactor];
+    
+}
 - (CGFloat)cornerMargin {
     
     return _cropAreaCornerLineWidth - _cropAreaBorderLineWidth;

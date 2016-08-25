@@ -37,7 +37,8 @@
     [self setUpTKImageView];
     currentProportion = 0;
     [self setUpCropProportionView];
-    [self clickProportionBtn: proportionBtnArr[1]];
+    [self clickProportionBtn: proportionBtnArr[0]];
+    _tkImageView.scaleFactor = 0.6;
     
 }
 - (void)didReceiveMemoryWarning {
