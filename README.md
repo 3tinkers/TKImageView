@@ -11,12 +11,12 @@ An easy way to crop an image.
 * iOS 7.0 or higher
 
 ##Samples
-![](http://7xlm3m.com1.z0.glb.clouddn.com/sample1.gif)
-![](http://7xlm3m.com1.z0.glb.clouddn.com/sample2.gif)
-![](http://7xlm3m.com1.z0.glb.clouddn.com/sample3.gif)
-![](http://7xlm3m.com1.z0.glb.clouddn.com/sample4.gif)
-![](http://7xlm3m.com1.z0.glb.clouddn.com/sample5.gif)
-![](http://7xlm3m.com1.z0.glb.clouddn.com/sample6.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample_1.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample_2.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample_3.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample_4.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample_5.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample_6.gif)
 ##Properties
 name  | type | description
 ------------- | ------------- | -------------
