@@ -10,7 +10,6 @@
 #import "CropImageViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *toCropImageView;
 @end
 
 @implementation ViewController
@@ -18,7 +17,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name: @"CropOK" object: nil];
     
 }
 
@@ -27,15 +25,43 @@
     [super didReceiveMemoryWarning];
     
 }
-- (IBAction)clickStartBtn:(id)sender {
+- (void)cropImage: (UIImage *)image {
     
     CropImageViewController *cropImageViewController = [[CropImageViewController alloc]initWithNibName:@"CropImageViewController" bundle:nil];
-    [self presentViewController:cropImageViewController animated:YES completion:NULL];
+    cropImageViewController.image = image;
+    [self.navigationController pushViewController: cropImageViewController animated: YES];
     
 }
-- (void)notificationHandler: (NSNotification *)notification {
+#pragma mark - UIImagePickerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
-    self.toCropImageView.image = notification.object;
+    UIImage *toCropImage = info[UIImagePickerControllerOriginalImage];
+    [self cropImage: toCropImage];
+    [picker dismissViewControllerAnimated: YES completion: NULL];
+    
+}
+#pragma mark - IBAction
+- (IBAction)clickImageCropBtn:(id)sender {
+    
+    UIImage *toCropImage = [UIImage imageNamed: @"test.jpg"];
+    [self cropImage: toCropImage];
+    
+}
+- (IBAction)clickCameraCropBtn:(id)sender {
+
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.sourceType = sourceType;
+    imagePicker.delegate = self;
+    [self presentViewController: imagePicker animated:YES completion: NULL];
+}
+- (IBAction)clickAlbumCropBtn:(id)sender {
+
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.sourceType = sourceType;
+    imagePicker.delegate = self;
+    [self presentViewController: imagePicker animated:YES completion: NULL];
     
 }
 @end

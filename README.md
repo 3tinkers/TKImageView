@@ -11,42 +11,37 @@ An easy way to crop an image.
 * iOS 7.0 or higher
 
 ##Samples
-![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/sample0.gif)
-![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/sample1.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample1.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample2.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample3.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample4.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample5.gif)
+![](http://7xlm3m.com1.z0.glb.clouddn.com/sample6.gif)
 ##Properties
 name  | type | description
 ------------- | ------------- | -------------
-toCropImage  | UIImage  | the image you want to crop.
-needScaleCrop  | BOOL  | determines whether you need to scale crop with pinch gesture or not.
-showMidLines  | BOOL  | thow the lines in the middle of each border, which can receive pan gesture to resize the crop area when the aspect ratio is ZERO.
-showCrossLines  | BOOL  | show the cross lines in the crop area. 
-cropAspectRatio  | CGFloat  | The aspect retio you want to crop the image, equals to WIDTH / HEIGHT.
-cropAreaBorderLineColor  | UIColor  | the color of border lines.  
-cropAreaBorderLineWidth  | CGFloat  | the width of border lines.  
-cropAreaCornerLineColor  | UIColor  | the line color of the corner.
-cropAreaCornerLineWidth  | CGFloat  | the width of the corner area, not the line width in corner.  
-cropAreaCornerWidth  | CGFloat  | the line width of the corner. 
-cropAreaCornerHeight  | CGFloat  | the height of the corner area.  
-minspace  | CGFloat  | the minimum distance between the corners of one border.  
-cropAreaCrossLineWidth  | CGFloat  | the width of cross lines.
-cropAreaCrossLineColor  | UIColor  | the color of cross lines.
-cropAreaMidLineWidth  | CGFloat  | the width of middle lines.
-cropAreaMidLineHeight  | CGFloat  | the height of middle lines.
-cropAreaMidLineColor  | UIColor  | the color of middle lines.
-maskColor  | UIColor  | the color of the mask view which is always transparent black.
-cornerBorderInImage  | BOOL  | whether the corner border inside the image or not.
-![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/property.png)  
+toCropImage  | UIImage  | 待裁剪的图片。<br>The image you want to crop.
+needScaleCrop  | BOOL  | 是否需要缩放裁剪。<br>Determines whether you need to scale crop with pinch gesture or not.
+showMidLines  | BOOL  | 是否需要显示每条边中间的线，这条中间线支持拖动手势。<br>Show the lines in the middle of each border, which can receive pan gesture to resize the crop area when the aspect ratio is ZERO.
+showCrossLines  | BOOL  | 是否显示裁剪框内的交叉线。<br>Show the cross lines in the crop area. 
+cropAspectRatio  | CGFloat  | 设置裁剪框的宽高比。<br>The aspect retio you want to crop the image, equals to WIDTH / HEIGHT.
+cropAreaBorderLineColor  | UIColor  | 设置裁剪边框的颜色。<br>The color of border lines.  
+cropAreaBorderLineWidth  | CGFloat  | 设置裁剪边框的线宽。<br>The width of border lines.  
+cropAreaCornerLineColor  | UIColor  | 设置裁剪边框四个角的颜色。<br>The line color of the corner.
+cropAreaCornerLineWidth  | CGFloat  | 设置裁剪边框四个角的线宽。<br>The line width of the corner.  
+cropAreaCornerWidth  | CGFloat  | 设置裁剪边框四个角的宽度，这里指角的横边的长度。<br>The width of the corner area, indicate the length of the horizontal line of the corner.  
+cropAreaCornerHeight  | CGFloat  | 设置裁剪边框四个角的高度，这里指角的竖边的长度。<br>The height of the corner area, indicate the length of the vertical line of the corner.  
+minspace  | CGFloat  | 相邻角之间的最小距离。<br>The minimum distance between the corners.  
+cropAreaCrossLineWidth  | CGFloat  | 裁剪框内交叉线的宽度。<br>The width of cross lines.
+cropAreaCrossLineColor  | UIColor  | 裁剪框内交叉线的颜色。<br>The color of cross lines.
+cropAreaMidLineWidth  | CGFloat  | 裁剪边框每条边中间线的长度。<br>The width of middle lines.
+cropAreaMidLineHeight  | CGFloat  | 裁剪边框每条边中间线的线宽。<br> The height of middle lines.
+cropAreaMidLineColor  | UIColor  | 裁剪边框每条边中间线的颜色。<br>The color of middle lines.
+maskColor  | UIColor  | 裁剪区域的蒙板颜色。<br>The color of the mask view which is always transparent black.
+cornerBorderInImage  | BOOL  | 裁剪边框的四个角是否可以超出图片显示。<br>Whether the corner border inside the image or not.
 
-cornerBorderInImage = YES  
-
-![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/cornerBorderInImage.png)  
-
-cornerBorderInImage = NO  
-
-![](https://github.com/3tinkers/TKImageView/blob/master/TKImageViewDemo/resources/cornerBorderOutOfImage.png)
 ## Usage
-TKImageView support both **initWithFrame** and **initWithCoder** to initialize.
-The properties should be set or keep default after the initialize.Once one property has been set, you should not change it any more. 
+TKImageView supports both **initWithFrame** and **initWithCoder** to initialize.You can customize your TKImageView instance with the properties to match your design.
 
 	@property (weak, nonatomic) IBOutlet TKImageView *tkImageView;
 	- (void)viewDidLoad {   

@@ -35,6 +35,8 @@
 		600259A71D518A930079397A /* CropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600259A51D518A930079397A /* CropImageViewController.m */; };
 		600259A81D518A930079397A /* CropImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600259A61D518A930079397A /* CropImageViewController.xib */; };
 		605C920D1D53153200BCF58F /* TKImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605C920C1D53153200BCF58F /* TKImageView.m */; };
+		60DAA0321E21DBBA00C1CC19 /* CropResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DAA0301E21DBBA00C1CC19 /* CropResultViewController.m */; };
+		60DAA0331E21DBBA00C1CC19 /* CropResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60DAA0311E21DBBA00C1CC19 /* CropResultViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,9 @@
 		600259A61D518A930079397A /* CropImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropImageViewController.xib; sourceTree = "<group>"; };
 		605C920B1D53153200BCF58F /* TKImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKImageView.h; sourceTree = "<group>"; };
 		605C920C1D53153200BCF58F /* TKImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKImageView.m; sourceTree = "<group>"; };
+		60DAA02F1E21DBBA00C1CC19 /* CropResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropResultViewController.h; sourceTree = "<group>"; };
+		60DAA0301E21DBBA00C1CC19 /* CropResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropResultViewController.m; sourceTree = "<group>"; };
+		60DAA0311E21DBBA00C1CC19 /* CropResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropResultViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,9 @@
 				600259A41D518A930079397A /* CropImageViewController.h */,
 				600259A51D518A930079397A /* CropImageViewController.m */,
 				600259A61D518A930079397A /* CropImageViewController.xib */,
+				60DAA02F1E21DBBA00C1CC19 /* CropResultViewController.h */,
+				60DAA0301E21DBBA00C1CC19 /* CropResultViewController.m */,
+				60DAA0311E21DBBA00C1CC19 /* CropResultViewController.xib */,
 				6002596B1D5189C80079397A /* Main.storyboard */,
 				6002596E1D5189C90079397A /* Assets.xcassets */,
 				600259701D5189C90079397A /* LaunchScreen.storyboard */,
@@ -197,6 +205,7 @@
 				TargetAttributes = {
 					6002595E1D5189C80079397A = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = BXJ4ELE2ZS;
 					};
 				};
 			};
@@ -238,6 +247,7 @@
 				6002599C1D518A4D0079397A /* cropHL_16_9.png in Resources */,
 				6002599F1D518A4D0079397A /* cropHL_4_3.png in Resources */,
 				6002596F1D5189C90079397A /* Assets.xcassets in Resources */,
+				60DAA0331E21DBBA00C1CC19 /* CropResultViewController.xib in Resources */,
 				600259951D518A4D0079397A /* crop_1_1.png in Resources */,
 				600259961D518A4D0079397A /* crop_3_4.png in Resources */,
 				6002596D1D5189C80079397A /* Main.storyboard in Resources */,
@@ -259,6 +269,7 @@
 				6002596A1D5189C80079397A /* ViewController.m in Sources */,
 				600259671D5189C80079397A /* AppDelegate.m in Sources */,
 				600259641D5189C80079397A /* main.m in Sources */,
+				60DAA0321E21DBBA00C1CC19 /* CropResultViewController.m in Sources */,
 				600259A71D518A930079397A /* CropImageViewController.m in Sources */,
 				605C920D1D53153200BCF58F /* TKImageView.m in Sources */,
 			);
@@ -304,9 +315,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Chen (L42NE54C54)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wang Chen (L42NE54C54)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8XV22R7LG2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -326,6 +339,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "804d2062-4874-40e8-b19e-64e73f2a6279";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -348,9 +362,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Chen (L42NE54C54)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wang Chen (L42NE54C54)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8XV22R7LG2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -363,6 +379,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "804d2062-4874-40e8-b19e-64e73f2a6279";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -372,10 +389,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BXJ4ELE2ZS;
 				INFOPLIST_FILE = TKImageViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yinyu.TKImageViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "804d2062-4874-40e8-b19e-64e73f2a6279";
+				PROVISIONING_PROFILE_SPECIFIER = fengshui_dev_all;
 			};
 			name = Debug;
 		};
@@ -383,10 +403,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BXJ4ELE2ZS;
 				INFOPLIST_FILE = TKImageViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yinyu.TKImageViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = fengshui_dev_all;
 			};
 			name = Release;
 		};

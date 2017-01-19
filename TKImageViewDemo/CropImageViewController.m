@@ -7,6 +7,7 @@
 //
 
 #import "CropImageViewController.h"
+#import "CropResultViewController.h"
 #import "TKImageView.h"
 
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
@@ -34,10 +35,11 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self setUpTKImageView];
-    currentProportion = 0;
     [self setUpCropProportionView];
     [self clickProportionBtn: proportionBtnArr[0]];
+    currentProportion = 0;
     _tkImageView.scaleFactor = 0.6;
     
 }
@@ -48,7 +50,7 @@
 }
 - (void)setUpTKImageView {
     
-    _tkImageView.toCropImage = [UIImage imageNamed: @"test.jpg"];
+    _tkImageView.toCropImage = _image;
     _tkImageView.showMidLines = YES;
     _tkImageView.needScaleCrop = YES;
     _tkImageView.showCrossLines = YES;
@@ -56,15 +58,15 @@
     _tkImageView.cropAreaCornerWidth = 44;
     _tkImageView.cropAreaCornerHeight = 44;
     _tkImageView.minSpace = 30;
-    _tkImageView.cropAreaCornerLineColor = [UIColor lightGrayColor];
-    _tkImageView.cropAreaBorderLineColor = [UIColor grayColor];
-    _tkImageView.cropAreaCornerLineWidth = 8;
-    _tkImageView.cropAreaBorderLineWidth = 6;
-    _tkImageView.cropAreaMidLineWidth = 30;
-    _tkImageView.cropAreaMidLineHeight = 8;
-    _tkImageView.cropAreaMidLineColor = [UIColor grayColor];
-    _tkImageView.cropAreaCrossLineColor = [UIColor lightGrayColor];
-    _tkImageView.cropAreaCrossLineWidth = 6;
+    _tkImageView.cropAreaCornerLineColor = [UIColor whiteColor];
+    _tkImageView.cropAreaBorderLineColor = [UIColor whiteColor];
+    _tkImageView.cropAreaCornerLineWidth = 6;
+    _tkImageView.cropAreaBorderLineWidth = 4;
+    _tkImageView.cropAreaMidLineWidth = 40;
+    _tkImageView.cropAreaMidLineHeight = 6;
+    _tkImageView.cropAreaMidLineColor = [UIColor whiteColor];
+    _tkImageView.cropAreaCrossLineColor = [UIColor whiteColor];
+    _tkImageView.cropAreaCrossLineWidth = 4;
     
 }
 - (void)setUpCropProportionView {
@@ -102,14 +104,14 @@
 #pragma mark - IBActions
 - (IBAction)clickCancelBtn:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.navigationController popViewControllerAnimated: YES];
     
 }
 - (IBAction)clickOkBtn:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"CropOK" object: [_tkImageView currentCroppedImage]];
-    }];
+    CropResultViewController *cropResultViewController = [[CropResultViewController alloc] initWithNibName: @"CropResultViewController" bundle: nil];
+    cropResultViewController.cropResultImage = [_tkImageView currentCroppedImage];
+    [self.navigationController pushViewController: cropResultViewController animated: YES];
     
 }
 @end
