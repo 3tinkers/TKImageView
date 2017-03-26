@@ -38,13 +38,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI2-Ex-MaS">
-                                <rect key="frame" x="87" y="133" width="200" height="44"/>
+                                <rect key="frame" x="87" y="89" width="200" height="44"/>
                                 <color key="backgroundColor" red="0.18772074580192566" green="0.51381963491439819" blue="0.9836958646774292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="IpD-Jz-rhg"/>
                                     <constraint firstAttribute="height" constant="44" id="lhB-2K-mAO"/>
                                 </constraints>
-                                <state key="normal" title="固定裁剪">
+                                <state key="normal" title="Image">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -52,13 +52,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSw-kn-fU4">
-                                <rect key="frame" x="87" y="209" width="200" height="44"/>
+                                <rect key="frame" x="87" y="165" width="200" height="44"/>
                                 <color key="backgroundColor" red="0.18772074580000001" green="0.51381963490000004" blue="0.98369586470000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="EwA-Bi-rd0"/>
                                     <constraint firstAttribute="width" constant="200" id="d9z-ud-pWO"/>
                                 </constraints>
-                                <state key="normal" title="拍照裁剪">
+                                <state key="normal" title="Camera">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -66,13 +66,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nq-qG-ZVz">
-                                <rect key="frame" x="87" y="285" width="200" height="44"/>
+                                <rect key="frame" x="87" y="241" width="200" height="44"/>
                                 <color key="backgroundColor" red="0.18772074580000001" green="0.51381963490000004" blue="0.98369586470000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Len-LW-sRu"/>
                                     <constraint firstAttribute="width" constant="200" id="Q4G-7j-BkI"/>
                                 </constraints>
-                                <state key="normal" title="相册裁剪">
+                                <state key="normal" title="Photo Library">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>

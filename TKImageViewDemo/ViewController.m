@@ -43,7 +43,7 @@
 #pragma mark - IBAction
 - (IBAction)clickImageCropBtn:(id)sender {
     
-    UIImage *toCropImage = [UIImage imageNamed: @"test.jpg"];
+    UIImage *toCropImage = [UIImage imageNamed: @"test"];
     [self cropImage: toCropImage];
     
 }
